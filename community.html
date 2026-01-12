@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المجتمع - SmartSpace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oranienbaum&family=Quattrocento+Sans:wght@400;700&display=swap');
+        
+        :root {
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #1A1A1A;
+            --bg-tertiary: #2D2D2D;
+            --gold: #D4AF37;
+            --copper: #B87333;
+            --platinum: #E5E4E2;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Neumorphism Effects */
+        .neumorphic {
+            background: var(--bg-secondary);
+            box-shadow: 8px 8px 16px #0D0D0D, -8px -8px 16px #212121;
+            border-radius: 20px;
+        }
+        
+        .neumorphic-inset {
+            background: var(--bg-secondary);
+            box-shadow: inset 8px 8px 16px #0D0D0D, inset -8px -8px 16px #212121;
+            border-radius: 20px;
+        }
+        
+        /* Glassmorphism Effects */
+        .glassmorphic {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+        
+        /* Navigation */
+        .nav-glass {
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gold), var(--copper));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Post Cards */
+        .post-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .post-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        /* User Avatar */
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+        }
+        
+        /* Like Button */
+        .like-button {
+            transition: all 0.3s ease;
+        }
+        
+        .like-button:hover {
+            color: #EF4444;
+            transform: scale(1.1);
+        }
+        
+        .like-button.liked {
+            color: #EF4444;
+        }
+        
+        /* Community Stats */
+        .community-stat {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        /* Trending Topics */
+        .trending-topic {
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-right: 3px solid var(--gold);
+        }
+        
+        /* Create Post */
+        .create-post {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full top-0 z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="resources/logo.png" alt="SmartSpace" class="w-12 h-12">
+                <h1 class="font-display text-2xl font-bold gradient-text">SmartSpace</h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-yellow-400 transition-colors">الرئيسية</a>
+                <a href="products.html" class="text-gray-300 hover:text-yellow-400 transition-colors">المنتجات</a>
+                <a href="designer.html" class="text-gray-300 hover:text-yellow-400 transition-colors">المصمم</a>
+                <a href="dashboard.html" class="text-gray-300 hover:text-yellow-400 transition-colors">لوحة التحكم</a>
+                <a href="community.html" class="text-white hover:text-yellow-400 transition-colors">المجتمع</a>
+            </div>
+            <button class="neumorphic px-6 py-2 text-yellow-400 font-medium">
+                تسجيل الدخول
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-24 pb-12 px-6">
+        <div class="container mx-auto max-w-7xl text-center">
+            <h1 class="font-display text-5xl md:text-6xl font-bold mb-6 gradient-text">
+                مجتمع SmartSpace
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                انضم إلى مجتمع نابض بالحياة من عشاق التكنولوجيا الذين يشاركون خبراتهم وصور منازلهم الذكية
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="neumorphic px-8 py-4 text-lg font-medium gradient-text" onclick="scrollToCreatePost()">
+                    شارك تجربتك
+                </button>
+                <button class="glassmorphic px-8 py-4 text-lg font-medium text-white" onclick="scrollToPosts()">
+                    تصفح المنشورات
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="px-6 mb-12">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="community-stat">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">12,847</div>
+                    <p class="text-gray-400">عضو نشط</p>
+                </div>
+                <div class="community-stat">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">3,291</div>
+                    <p class="text-gray-400">تصميم منشور</p>
+                </div>
+                <div class="community-stat">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">18,456</div>
+                    <p class="text-gray-400">مراجعة مكتوبة</p>
+                </div>
+                <div class="community-stat">
+                    <div class="text-3xl font-bold text-yellow-400 mb-2">156</div>
+                    <p class="text-gray-400">نصيحة يومية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Community Content -->
+    <section class="px-6 pb-20">
+        <div class="container mx-auto max-w-7xl">
+            <div class="community-grid grid lg:grid-cols-3 gap-8">
+                
+                <!-- Left Column -->
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <!-- Create Post -->
+                    <div class="create-post" id="create-post">
+                        <h3 class="font-display text-xl font-bold mb-4 gradient-text">شارك تجربتك</h3>
+                        <div class="flex items-start space-x-4 mb-4">
+                            <img src="resources/logo.png" alt="أحمد" class="user-avatar">
+                            <div class="flex-1">
+                                <textarea 
+                                    placeholder="ماذا تريد أن تشارك مع المجتمع اليوم؟" 
+                                    class="w-full bg-gray-800 bg-opacity-50 rounded-lg p-3 text-white placeholder-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                                    rows="3"
+                                ></textarea>
+                                <div class="flex justify-between items-center mt-3">
+                                    <div class="flex space-x-4">
+                                        <button class="text-gray-400 hover:text-yellow-400 transition-colors">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </button>
+                                        <button class="text-gray-400 hover:text-yellow-400 transition-colors">
+                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="neumorphic px-6 py-2 text-yellow-400 font-medium">
+                                        نشر
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Posts Feed -->
+                    <div id="posts-feed">
+                        
+                        <!-- Post 1 -->
+                        <div class="post-card p-6 mb-6">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="resources/logo.png" alt="سارة" class="user-avatar">
+                                <div class="flex-1">
+                                    <h4 class="font-bold">سارة أحمد</h4>
+                                    <p class="text-sm text-gray-400">منذ 3 ساعات</p>
+                                </div>
+                                <button class="text-gray-400 hover:text-white">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="mb-4">
+                                انتهيت أخيراً من تحويل غرفة المعيشة إلى فضاء ذكي متكامل! استخدمت الإضاءة الذكية من Philips Hue مع السماعة الذكية Amazon Echo. النتيجة رائعة جداً! 🏠✨
+                            </p>
+                            <img src="resources/smart_home_interior.jpg" alt="غرفة معيشة ذكية" class="w-full h-64 object-cover rounded-lg mb-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <button class="like-button flex items-center space-x-2 text-gray-400 hover:text-red-400" onclick="toggleLike(this)">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>24</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 text-gray-400 hover:text-yellow-400">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>8</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 text-gray-400 hover:text-blue-400">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                                        </svg>
+                                        <span>مشاركة</span>
+                                    </button>
+                                </div>
+                                <span class="text-sm text-gray-400">1.2k مشاهدة</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 2 -->
+                        <div class="post-card p-6 mb-6">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="resources/logo.png" alt="محمد" class="user-avatar">
+                                <div class="flex-1">
+                                    <h4 class="font-bold">محمد علي</h4>
+                                    <p class="text-sm text-gray-400">منذ 5 ساعات</p>
+                                </div>
+                                <button class="text-gray-400 hover:text-white">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="mb-4">
+                                نصيحة ذهبية: عند اختيار الأجهزة الذكية، تأكد من توافقها مع نظام التشغيل المستخدم. أنا شخصياً أفضل الأجهزة التي تدعم Google Assistant و Amazon Alexa معاً! 🤓
+                            </p>
+                            <div class="bg-gray-800 bg-opacity-50 rounded-lg p-4 mb-4">
+                                <h5 class="font-bold mb-2">نصيحة اليوم</h5>
+                                <p class="text-sm text-gray-300">
+                                    للحصول على أفضل تجربة، ابدأ بأجهزة أساسية مثل المصابيح الذكية والمفاتيح الذكية، ثم انتقل إلى الأجهزة الأكثر تطوراً.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <button class="like-button flex items-center space-x-2 text-gray-400 hover:text-red-400" onclick="toggleLike(this)">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>18</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 text-gray-400 hover:text-yellow-400">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>12</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 text-gray-400 hover:text-blue-400">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                                        </svg>
+                                        <span>مشاركة</span>
+                                    </button>
+                                </div>
+                                <span class="text-sm text-gray-400">856 مشاهدة</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 3 -->
+                        <div class="post-card p-6 mb-6">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="resources/logo.png" alt="ليلى" class="user-avatar">
+                                <div class="flex-1">
+                                    <h4 class="font-bold">ليلى أحمد</h4>
+                                    <p class="text-sm text-gray-400">منذ يوم</p>
+                                </div>
+                                <button class="text-gray-400 hover:text-white">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="mb-4">
+                                قبل وبعد: مطبخي التقليدي تحول إلى مطبخ ذكي متكامل! الآن أستطيع التحكم في كل شيء من الثلاجة إلى الغسالة عبر تطبيق واحد! 🏡👨‍🍳
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <img src="resources/smart_kitchen.jpg" alt="المطبخ الذكي" class="w-full h-40 object-cover rounded-lg">
+                                <img src="resources/modern_apartment.jpg" alt="المطبخ السابق" class="w-full h-40 object-cover rounded-lg">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-6">
+                                    <button class="like-button liked flex items-center space-x-2 text-red-400" onclick="toggleLike(this)">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>42</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 text-gray-400 hover:text-yellow-400">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>16</span>
+                                    </button>
+                                    <button class="flex items-center space-x-2 text-gray-400 hover:text-blue-400">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/>
+                                        </svg>
+                                        <span>مشاركة</span>
+                                    </button>
+                                </div>
+                                <span class="text-sm text-gray-400">2.1k مشاهدة</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Load More Button -->
+                    <div class="text-center">
+                        <button class="neumorphic px-8 py-3 text-yellow-400 font-medium" onclick="loadMorePosts()">
+                            تحميل المزيد
+                        </button>
+                    </div>
+                    
+                </div>
+                
+                <!-- Right Column -->
+                <div class="space-y-8">
+                    
+                    <!-- Trending Topics -->
+                    <div class="neumorphic p-6">
+                        <h3 class="font-display text-xl font-bold mb-6 gradient-text">المواضيع الرائجة</h3>
+                        <div class="space-y-4">
+                            <div class="trending-topic">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-bold">#المنزل_الذكي</h4>
+                                    <span class="text-sm text-gray-400">1.2k منشور</span>
+                                </div>
+                                <p class="text-sm text-gray-400">كل ما يخص تحويل المنازل إلى فضاءات ذكية</p>
+                            </div>
+                            
+                            <div class="trending-topic">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-bold">#نصائح_IoT</h4>
+                                    <span class="text-sm text-gray-400">856 منشور</span>
+                                </div>
+                                <p class="text-sm text-gray-400">نصائح وحيل لاستخدام إنترنت الأشياء</p>
+                            </div>
+                            
+                            <div class="trending-topic">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-bold">#مراجعات_الأجهزة</h4>
+                                    <span class="text-sm text-gray-400">643 منشور</span>
+                                </div>
+                                <p class="text-sm text-gray-400">مراجعات وآراء حول الأجهزة الذكية</p>
+                            </div>
+                            
+                            <div class="trending-topic">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-bold">#تصاميم_مبتكرة</h4>
+                                    <span class="text-sm text-gray-400">429 منشور</span>
+                                </div>
+                                <p class="text-sm text-gray-400">تصاميم مبتكرة للمنازل الذكية</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Top Contributors -->
+                    <div class="neumorphic p-6">
+                        <h3 class="font-display text-xl font-bold mb-6 gradient-text">أفضل المساهمين</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-sm">1</div>
+                                <img src="resources/logo.png" alt="أحمد" class="w-8 h-8 rounded-full">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm">أحمد محمد</h4>
+                                    <p class="text-xs text-gray-400">2,847 نقطة</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center text-black font-bold text-sm">2</div>
+                                <img src="resources/logo.png" alt="سارة" class="w-8 h-8 rounded-full">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm">سارة أحمد</h4>
+                                    <p class="text-xs text-gray-400">2,156 نقطة</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-black font-bold text-sm">3</div>
+                                <img src="resources/logo.png" alt="محمد" class="w-8 h-8 rounded-full">
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-sm">محمد علي</h4>
+                                    <p class="text-xs text-gray-400">1,923 نقطة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Daily Tip -->
+                    <div class="neumorphic p-6">
+                        <h3 class="font-display text-xl font-bold mb-4 gradient-text">نصيحة اليوم</h3>
+                        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 bg-opacity-20 rounded-lg p-4 border border-yellow-500 border-opacity-30">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-2">حماية خصوصيتك</h4>
+                                    <p class="text-sm text-gray-300">
+                                        غيّر كلمات المرور الافتراضية للأجهزة الذكية وحدّث البرامج الثابتة بانتظام لحماية منزلك من الاختراقات.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-black border-t border-gray-800">
+        <div class="container mx-auto max-w-7xl text-center">
+            <div class="flex items-center justify-center space-x-4 mb-6">
+                <img src="resources/logo.png" alt="SmartSpace" class="w-10 h-10">
+                <h3 class="font-display text-2xl font-bold gradient-text">SmartSpace</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+                حوّل منزلك إلى فضاء ذكي مع أحدث تقنيات إنترنت الأشياء
+            </p>
+            <p class="text-gray-500 text-sm">
+                © 2025 SmartSpace. جميع الحقوق محفوظة.
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Community JavaScript
+        function scrollToCreatePost() {
+            document.getElementById('create-post').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function scrollToPosts() {
+            document.getElementById('posts-feed').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function toggleLike(button) {
+            const isLiked = button.classList.contains('liked');
+            const countSpan = button.querySelector('span');
+            let count = parseInt(countSpan.textContent);
+            
+            if (isLiked) {
+                button.classList.remove('liked');
+                button.style.color = '#9CA3AF';
+                countSpan.textContent = count - 1;
+            } else {
+                button.classList.add('liked');
+                button.style.color = '#EF4444';
+                countSpan.textContent = count + 1;
+                
+                // Animation
+                anime({
+                    targets: button,
+                    scale: [1, 1.2, 1],
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            }
+        }
+        
+        function loadMorePosts() {
+            SmartSpace.showNotification('تحميل المزيد من المنشورات...', 'info');
+            
+            // Simulate loading more posts
+            setTimeout(() => {
+                SmartSpace.showNotification('تم تحميل 5 منشورات جديدة', 'success');
+            }, 1500);
+        }
+        
+        // Initialize community animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const postCards = document.querySelectorAll('.post-card');
+            postCards.forEach((card, index) => {
+                anime({
+                    targets: card,
+                    translateY: [30, 0],
+                    opacity: [0, 1],
+                    duration: 600,
+                    delay: index * 200,
+                    easing: 'easeOutQuad'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

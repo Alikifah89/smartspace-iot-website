@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SmartSpace - موقع إلكتروني متكامل لبيع الأجهزة الإلكترونية الذكية وإنترنت الأشياء. صمم منزلك الذكي باستخدام محاكي 3D متطور.">
+    <meta name="keywords" content="SmartSpace, IoT, أجهزة ذكية, إنترنت الأشياء, منزل ذكي, تصميم منزل, محاكي 3D">
+    <meta name="author" content="SmartSpace">
+    <title>SmartSpace - حوّل منزلك إلى فضاء ذكي</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full top-0 z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="resources/logo.png" alt="SmartSpace" class="w-12 h-12">
+                <h1 class="font-display text-2xl font-bold gradient-text">SmartSpace</h1>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-yellow-400 transition-colors">الرئيسية</a>
+                <a href="products.html" class="text-gray-300 hover:text-yellow-400 transition-colors">المنتجات</a>
+                <a href="designer.html" class="text-gray-300 hover:text-yellow-400 transition-colors">المصمم</a>
+                <a href="dashboard.html" class="text-gray-300 hover:text-yellow-400 transition-colors">لوحة التحكم</a>
+                <a href="community.html" class="text-gray-300 hover:text-yellow-400 transition-colors">المجتمع</a>
+            </div>
+            <button class="neumorphic px-6 py-2 text-yellow-400 font-medium">
+                تسجيل الدخول
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content text-center px-6 max-w-6xl mx-auto">
+            <h1 class="hero-title font-display text-6xl md:text-8xl font-bold mb-6 gradient-text">
+                حوّل منزلك إلى فضاء ذكي
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                اكتشف عالم الأجهزة الإلكترونية الذكية وإنترنت الأشياء مع SmartSpace. نقدم لك تجربة تسوق فريدة مع محاكي
+                3D متطور يسمح لك بتصميم منزلك الذكي قبل الشراء.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="window.location.href='designer.html'"
+                    class="neumorphic px-8 py-4 text-lg font-medium gradient-text hover-3d">
+                    ابدأ التصميم الآن
+                </button>
+                <button onclick="window.location.href='products.html'"
+                    class="glassmorphic px-8 py-4 text-lg font-medium text-white hover:bg-white hover:bg-opacity-10 transition-all">
+                    استكشف المنتجات
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="particle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="top: 30%; left: 70%; animation-delay: 4s;"></div>
+        <div class="particle" style="top: 80%; left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="top: 40%; left: 90%; animation-delay: 3s;"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">
+                لماذا تختار SmartSpace؟
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="neumorphic p-8 text-center hover-3d">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-4">محاكي 3D فريد</h3>
+                    <p class="text-gray-400">صمم منزلك الذكي باستخدام محاكي ثلاثي الأبعاد متطور يسمح لك برؤية الأجهزة في
+                        مكانها قبل الشراء</p>
+                </div>
+
+                <div class="neumorphic p-8 text-center hover-3d">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-4">توصيات AI ذكية</h3>
+                    <p class="text-gray-400">احصل على اقتراحات مخصصة بناءً على سلوكك ومساحة مكانك واحتياجاتك الخاصة</p>
+                </div>
+
+                <div class="neumorphic p-8 text-center hover-3d">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-4">حزم ذكية</h3>
+                    <p class="text-gray-400">اقترب من حزم أجهزة متناغمة مصممة خصيصاً لتلبية احتياجاتك مثل الأمان
+                        والترفيه والطاقة</p>
+                </div>
+
+                <div class="neumorphic p-8 text-center hover-3d">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-4">مجتمع نشط</h3>
+                    <p class="text-gray-400">انضم إلى مجتمع من عشاق التكنولوجيا الذين يشاركون خبراتهم وصور منازلهم
+                        الذكية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 px-6 bg-gradient-to-b from-transparent to-gray-900">
+        <div class="container mx-auto max-w-7xl">
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-center mb-16 gradient-text">
+                المنتجات المميزة
+            </h2>
+            <div class="splide" id="featured-products">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <div class="product-card p-6 mx-4">
+                                <img src="resources/smart_lock.jpg" alt="قفل ذكي"
+                                    class="w-full h-48 object-cover rounded-lg mb-4">
+                                <h3 class="font-display text-xl font-bold mb-2">قفل ذكي متطور</h3>
+                                <p class="text-gray-400 mb-4">تحكم كامل في دخول منزلك عبر البصمة أو الهاتف أو كلمة
+                                    المرور</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-2xl font-bold text-yellow-400">1,299 ر.س</span>
+                                    <button class="neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-card p-6 mx-4">
+                                <img src="resources/smart_thermostat.jpg" alt="منظم حرارة ذكي"
+                                    class="w-full h-48 object-cover rounded-lg mb-4">
+                                <h3 class="font-display text-xl font-bold mb-2">منظم حرارة ذكي</h3>
+                                <p class="text-gray-400 mb-4">تحكم ذكي في درجة حرارة منزلك مع توفير الطاقة</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-2xl font-bold text-yellow-400">899 ر.س</span>
+                                    <button class="neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-card p-6 mx-4">
+                                <img src="resources/smart_speaker1.jpg" alt="سماعة ذكية"
+                                    class="w-full h-48 object-cover rounded-lg mb-4">
+                                <h3 class="font-display text-xl font-bold mb-2">سماعة ذكية</h3>
+                                <p class="text-gray-400 mb-4">مساعد صوتي ذكي للتحكم في جميع أجهزتك المنزلية</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-2xl font-bold text-yellow-400">699 ر.س</span>
+                                    <button class="neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="product-card p-6 mx-4">
+                                <img src="resources/smart_lighting1.jpg" alt="إضاءة ذكية"
+                                    class="w-full h-48 object-cover rounded-lg mb-4">
+                                <h3 class="font-display text-xl font-bold mb-2">نظام إضاءة ذكي</h3>
+                                <p class="text-gray-400 mb-4">إضاءة ملونة وذكية قابلة للتحكم عبر التطبيق أو الصوت</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-2xl font-bold text-yellow-400">1,599 ر.س</span>
+                                    <button class="neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-7xl">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="neumorphic p-8">
+                    <div class="counter" data-target="15847">0</div>
+                    <h3 class="font-display text-xl font-bold mb-2">جهاز تم محاكاته اليوم</h3>
+                    <p class="text-gray-400">يتم محاكاة آلاف الأجهزة يومياً من قبل مستخدمينا</p>
+                </div>
+                <div class="neumorphic p-8">
+                    <div class="counter" data-target="2341">0</div>
+                    <h3 class="font-display text-xl font-bold mb-2">مستخدم نشط</h3>
+                    <p class="text-gray-400">مجتمع متنامي من عشاق التكنولوجيا</p>
+                </div>
+                <div class="neumorphic p-8">
+                    <div class="counter" data-target="156">0</div>
+                    <h3 class="font-display text-xl font-bold mb-2">منتج متاح</h3>
+                    <p class="text-gray-400">أحدث الأجهزة الذكية من أفضل الماركات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-gradient-to-r from-gray-900 to-black">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 gradient-text">
+                جاهز لتحويل منزلك إلى فضاء ذكي؟
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                انضم إلى آلاف المستخدمين الذين حولوا منازلهم إلى فضاءات ذكية مع SmartSpace
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="window.location.href='designer.html'"
+                    class="neumorphic px-8 py-4 text-lg font-medium gradient-text hover-3d">
+                    ابدأ الآن مجاناً
+                </button>
+                <button onclick="window.location.href='products.html'"
+                    class="glassmorphic px-8 py-4 text-lg font-medium text-white">
+                    تصفح المنتجات
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-black border-t border-gray-800">
+        <div class="container mx-auto max-w-7xl text-center">
+            <div class="flex items-center justify-center space-x-4 mb-6">
+                <img src="resources/logo.png" alt="SmartSpace" class="w-10 h-10">
+                <h3 class="font-display text-2xl font-bold gradient-text">SmartSpace</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+                حوّل منزلك إلى فضاء ذكي مع أحدث تقنيات إنترنت الأشياء
+            </p>
+            <p class="text-gray-500 text-sm">
+                © 2025 SmartSpace. جميع الحقوق محفوظة.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <div class="chatbot-button" onclick="toggleChat()">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                    d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
