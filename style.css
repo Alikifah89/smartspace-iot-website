@@ -447,3 +447,97 @@ a:focus-visible {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Scroll Indicator Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Product Badges */
+.product-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 10;
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+}
+
+.badge-bestseller {
+    background: linear-gradient(135deg, #EF4444, #DC2626);
+    color: white;
+}
+
+.badge-featured {
+    background: linear-gradient(135deg, #3B82F6, #2563EB);
+    color: white;
+}
+
+.badge-sale {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+    color: white;
+}
+
+/* Newsletter Form */
+.newsletter-input {
+    transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+/* Social Media Icons */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Enhanced Footer Links */
+footer a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    padding-right: 0.5rem;
+}
+
+/* Smooth Scroll Indicator */
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+/* Testimonial Avatar Gradient */
+.testimonial-avatar {
+    background: linear-gradient(135deg, var(--gold), var(--copper));
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}

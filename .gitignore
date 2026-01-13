@@ -18,6 +18,11 @@ build/
 *.min.js
 *.min.css
 
+# Deployment configs (keep these)
+!netlify.toml
+!vercel.json
+!_redirects
+
 # OS generated files
 .DS_Store
 .DS_Store?
