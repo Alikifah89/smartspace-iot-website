@@ -276,9 +276,9 @@ function initProductSearch() {
             const matchesSearch = title.includes(searchTerm);
             const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
             const matchesPrice = selectedPrice === 'all' || 
-                (selectedPrice === 'low' && price < 500) ||
-                (selectedPrice === 'medium' && price >= 500 && price < 1500) ||
-                (selectedPrice === 'high' && price >= 1500);
+                (selectedPrice === 'low' && price < 225000) ||
+                (selectedPrice === 'medium' && price >= 225000 && price < 675000) ||
+                (selectedPrice === 'high' && price >= 675000);
             
             if (matchesSearch && matchesCategory && matchesPrice) {
                 product.style.display = 'block';

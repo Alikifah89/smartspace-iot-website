@@ -274,32 +274,32 @@
                             <div class="device-item" draggable="true" data-device="smart-lock">
                                 <img src="resources/smart_lock.jpg" alt="قفل ذكي" class="w-full h-16 object-cover rounded mb-2">
                                 <p class="text-sm">قفل ذكي</p>
-                                <p class="text-xs text-gray-400">1,299 ر.س</p>
+                                <p class="text-xs text-gray-400">585,000 د.ع</p>
                             </div>
                             <div class="device-item" draggable="true" data-device="thermostat">
                                 <img src="resources/smart_thermostat.jpg" alt="منظم حرارة" class="w-full h-16 object-cover rounded mb-2">
                                 <p class="text-sm">منظم حرارة</p>
-                                <p class="text-xs text-gray-400">899 ر.س</p>
+                                <p class="text-xs text-gray-400">405,000 د.ع</p>
                             </div>
                             <div class="device-item" draggable="true" data-device="smart-speaker">
                                 <img src="resources/smart_speaker1.jpg" alt="سماعة ذكية" class="w-full h-16 object-cover rounded mb-2">
                                 <p class="text-sm">سماعة ذكية</p>
-                                <p class="text-xs text-gray-400">699 ر.س</p>
+                                <p class="text-xs text-gray-400">315,000 د.ع</p>
                             </div>
                             <div class="device-item" draggable="true" data-device="smart-light">
                                 <img src="resources/smart_lighting1.jpg" alt="إضاءة ذكية" class="w-full h-16 object-cover rounded mb-2">
                                 <p class="text-sm">إضاءة ذكية</p>
-                                <p class="text-xs text-gray-400">1,599 ر.س</p>
+                                <p class="text-xs text-gray-400">720,000 د.ع</p>
                             </div>
                             <div class="device-item" draggable="true" data-device="security-camera">
                                 <img src="resources/smart_sensor1.jpg" alt="كاميرا أمان" class="w-full h-16 object-cover rounded mb-2">
                                 <p class="text-sm">كاميرا أمان</p>
-                                <p class="text-xs text-gray-400">799 ر.س</p>
+                                <p class="text-xs text-gray-400">360,000 د.ع</p>
                             </div>
                             <div class="device-item" draggable="true" data-device="smart-switch">
                                 <img src="resources/smart_switch.jpg" alt="مفتاح ذكي" class="w-full h-16 object-cover rounded mb-2">
                                 <p class="text-sm">مفتاح ذكي</p>
-                                <p class="text-xs text-gray-400">399 ر.س</p>
+                                <p class="text-xs text-gray-400">180,000 د.ع</p>
                             </div>
                         </div>
                     </div>
@@ -333,7 +333,7 @@
                                 <div class="energy-indicator" id="energy-indicator" style="left: 30%;"></div>
                             </div>
                             <p class="text-xs text-gray-400 mt-2">
-                                استهلاك شهري تقريبي: <span id="energy-cost">45</span> ر.س
+                                استهلاك شهري تقريبي: <span id="energy-cost">20,250</span> د.ع
                             </p>
                         </div>
                     </div>
@@ -642,15 +642,18 @@
         
         function updateEnergyConsumption() {
             // Simple energy calculation
-            const baseConsumption = 30; // Base cost in SAR
-            const deviceConsumption = placedDevices.length * 5; // 5 SAR per device
+            const baseConsumption = 13500; // Base cost in IQD
+            const deviceConsumption = placedDevices.length * 2250; // 2,250 IQD per device
             const totalConsumption = baseConsumption + deviceConsumption;
             
-            document.getElementById('energy-cost').textContent = totalConsumption;
+            document.getElementById('energy-cost').textContent = totalConsumption.toLocaleString();
             
             // Update energy indicator
+            // Maximum expected consumption: ~50,000 IQD (base + ~16 devices)
+            // This allows the indicator to scale properly with the new IQD values
+            const maxConsumption = 50000;
             const indicator = document.getElementById('energy-indicator');
-            const percentage = Math.min(totalConsumption / 100, 1) * 100;
+            const percentage = Math.min((totalConsumption / maxConsumption) * 100, 100);
             indicator.style.left = percentage + '%';
         }
         
@@ -706,7 +709,7 @@
                 addDeviceToCanvas({
                     type: 'smart-speaker',
                     name: 'سماعة ذكية',
-                    price: '699 ر.س',
+                    price: '315,000 د.ع',
                     image: 'resources/smart_speaker1.jpg'
                 }, 200, 300);
                 
@@ -714,7 +717,7 @@
                     addDeviceToCanvas({
                         type: 'smart-light',
                         name: 'إضاءة ذكية',
-                        price: '1,599 ر.س',
+                        price: '720,000 د.ع',
                         image: 'resources/smart_lighting1.jpg'
                     }, 400, 200);
                 }, 500);
@@ -723,7 +726,7 @@
                     addDeviceToCanvas({
                         type: 'smart-lock',
                         name: 'قفل ذكي',
-                        price: '1,299 ر.س',
+                        price: '585,000 د.ع',
                         image: 'resources/smart_lock.jpg'
                     }, 100, 150);
                 }, 1000);
