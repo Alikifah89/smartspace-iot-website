@@ -209,11 +209,13 @@
                         <label class="block text-sm font-medium mb-2">الفئة</label>
                         <select id="category-filter" class="search-input w-full">
                             <option value="all">كل الفئات</option>
-                            <option value="security">الأمان</option>
+                            <option value="control">لوحات التحكم</option>
                             <option value="lighting">الإضاءة</option>
-                            <option value="climate">المناخ</option>
+                            <option value="security">الأمان</option>
+                            <option value="climate">المناخ والبيئة</option>
+                            <option value="shading">الستائر والظلال</option>
                             <option value="entertainment">الترفيه</option>
-                            <option value="kitchen">المطبخ</option>
+                            <option value="gateway">البوابات الذكية</option>
                         </select>
                     </div>
                     
@@ -252,22 +254,22 @@
         <div class="container mx-auto max-w-7xl">
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="products-grid">
                 
-                <!-- Product 1 -->
-                <div class="product-item product-card p-6" data-category="security" data-price="585000">
+                <!-- Product 1: Nature 7 PRO -->
+                <div class="product-item product-card p-6" data-category="control" data-price="1350000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_lock.jpg" alt="قفل ذكي متطور" class="w-full h-48 object-cover rounded-lg">
-                        <div class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs">الأكثر مبيعاً</div>
+                        <img src="resources/smart_control_panel.jpg" alt="Nature 7 PRO" class="w-full h-48 object-cover rounded-lg">
+                        <div class="product-badge badge-featured">مميز</div>
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">قفل ذكي متطور</h3>
-                    <p class="text-gray-400 mb-3">تحكم كامل في دخول منزلك عبر البصمة أو الهاتف أو كلمة المرور</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Nature 7 PRO</h3>
+                    <p class="text-gray-400 mb-3">لوحة تحكم ذكية مركزية بشاشة 7 بوصة مع بوابة مدمجة. تدعم CoSS، Zigbee، BLE، Wi-Fi. تحكم كامل في الإضاءة، الستائر، التكييف، الأمان، والصوت</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★★</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.8)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.9)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">585,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">1,350,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -276,21 +278,22 @@
                     </div>
                 </div>
 
-                <!-- Product 2 -->
-                <div class="product-item product-card p-6" data-category="climate" data-price="405000">
+                <!-- Product 2: Nature Mini PRO -->
+                <div class="product-item product-card p-6" data-category="control" data-price="990000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_thermostat.jpg" alt="منظم حرارة ذكي" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_hub.jpg" alt="Nature Mini PRO" class="w-full h-48 object-cover rounded-lg">
+                        <div class="product-badge badge-new">جديد</div>
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">منظم حرارة ذكي</h3>
-                    <p class="text-gray-400 mb-3">تحكم ذكي في درجة حرارة منزلك مع توفير الطاقة</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Nature Mini PRO</h3>
+                    <p class="text-gray-400 mb-3">لوحة تحكم ذكية 4 بوصة مع بوابة فائقة. يدعم حتى 500 جهاز فرعي. شاشة IPS ملونة عالية الدقة مع تحكم صوتي مدمج</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
-                            <span>★★★★☆</span>
+                            <span>★★★★★</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.5)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.8)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">405,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">990,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -299,14 +302,14 @@
                     </div>
                 </div>
 
-                <!-- Product 3 -->
-                <div class="product-item product-card p-6" data-category="entertainment" data-price="315000">
+                <!-- Product 3: Smart Door Lock C200 -->
+                <div class="product-item product-card p-6" data-category="security" data-price="720000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_speaker1.jpg" alt="سماعة ذكية" class="w-full h-48 object-cover rounded-lg">
-                        <div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs">جديد</div>
+                        <img src="resources/smart_lock.jpg" alt="Smart Door Lock C200" class="w-full h-48 object-cover rounded-lg">
+                        <div class="product-badge badge-bestseller">الأكثر مبيعاً</div>
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">سماعة ذكية</h3>
-                    <p class="text-gray-400 mb-3">مساعد صوتي ذكي للتحكم في جميع أجهزتك المنزلية</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Smart Door Lock C200</h3>
+                    <p class="text-gray-400 mb-3">قفل ذكي من المستوى C مع قلب ذكي متقدم. جسم أمان من الفولاذ المقاوم للصدأ 304. مقاوم للعنف والاقتحام. استهلاك طاقة منخفض مع إمداد طاقة طوارئ Type-C</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★★</span>
@@ -314,7 +317,7 @@
                         <span class="text-sm text-gray-400 mr-2">(4.9)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">315,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">720,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -323,21 +326,21 @@
                     </div>
                 </div>
 
-                <!-- Product 4 -->
-                <div class="product-item product-card p-6" data-category="lighting" data-price="720000">
+                <!-- Product 4: BLEND Switch PRO -->
+                <div class="product-item product-card p-6" data-category="lighting" data-price="450000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_lighting1.jpg" alt="نظام إضاءة ذكي" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_switch.jpg" alt="BLEND Switch PRO" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">نظام إضاءة ذكي</h3>
-                    <p class="text-gray-400 mb-3">إضاءة ملونة وذكية قابلة للتحكم عبر التطبيق أو الصوت</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">BLEND Switch PRO</h3>
+                    <p class="text-gray-400 mb-3">مفتاح ذكي بتصميم كلاسيكي عصري. سطح صقيل، 16 مليون لون لمؤشرات LED. مادة سيليكون خاصة. مرحل مغناطيسي 16A. متوفر بنوعي 86 و 120</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★☆</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.6)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.7)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">720,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">450,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -346,21 +349,22 @@
                     </div>
                 </div>
 
-                <!-- Product 5 -->
-                <div class="product-item product-card p-6" data-category="security" data-price="360000">
+                <!-- Product 5: BLEND Light Strip -->
+                <div class="product-item product-card p-6" data-category="lighting" data-price="540000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_smoke.jpg" alt="كاشف دخان ذكي" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_lighting1.jpg" alt="BLEND Light Strip" class="w-full h-48 object-cover rounded-lg">
+                        <div class="product-badge badge-new">جديد</div>
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">كاشف دخان ذكي</h3>
-                    <p class="text-gray-400 mb-3">كاشف دخان متطور مع إشعارات فورية على الهاتف</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">BLEND Light Strip (24V)</h3>
+                    <p class="text-gray-400 mb-3">شريط إضاءة ذكي مرن مع 16 مليون لون. سطوع قابل للتعديل ووضعيات مسبقة. يتفاعل مع نظام LifeSmart الذكي بالكامل</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
-                            <span>★★★★☆</span>
+                            <span>★★★★★</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.4)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.8)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">360,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">540,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -369,21 +373,21 @@
                     </div>
                 </div>
 
-                <!-- Product 6 -->
-                <div class="product-item product-card p-6" data-category="lighting" data-price="180000">
+                <!-- Product 6: Nature Thermostat -->
+                <div class="product-item product-card p-6" data-category="climate" data-price="675000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_switch.jpg" alt="مفتاح ذكي" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_thermostat.jpg" alt="Nature Thermostat" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">مفتاح ذكي</h3>
-                    <p class="text-gray-400 mb-3">مفتاح ذكي للتحكم في الإضاءة والأجهزة الكهربائية</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Nature Thermostat</h3>
+                    <p class="text-gray-400 mb-3">منظم حرارة ذكي مع شاشة زجاجية لمس. تحكم بثلاث سرعات للمروحة وصمام ثنائي الاتجاه. يدعم أنظمة HVAC والأنظمة الكهربائية</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★☆</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.3)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.6)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">180,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">675,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -392,22 +396,21 @@
                     </div>
                 </div>
 
-                <!-- Product 7 -->
-                <div class="product-item product-card p-6" data-category="security" data-price="585000">
+                <!-- Product 7: DEFED Motion Sensor -->
+                <div class="product-item product-card p-6" data-category="security" data-price="270000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_sensor1.jpg" alt="نظام استشعار ذكي" class="w-full h-48 object-cover rounded-lg">
-                        <div class="absolute top-2 left-2 bg-blue-500 text-white px-2 py-1 rounded text-xs">مميز</div>
+                        <img src="resources/smart_sensor1.jpg" alt="DEFED Motion Sensor" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">نظام استشعار ذكي</h3>
-                    <p class="text-gray-400 mb-3">مجموعة أجهزة استشعار للحركة والحرارة والرطوبة</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">DEFED Motion Sensor</h3>
+                    <p class="text-gray-400 mb-3">مستشعر حركة مع نطاق استشعار ديناميكي 0.8-12 متر. إنذار العبث بالجدار والغلاف. اتصال لاسلكي 800 متر. بطارية 7 سنوات</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
-                            <span>★★★★★</span>
+                            <span>★★★★☆</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.7)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.5)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">585,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">270,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -416,22 +419,22 @@
                     </div>
                 </div>
 
-                <!-- Product 8 -->
-                <div class="product-item product-card p-6" data-category="kitchen" data-price="4050000">
+                <!-- Product 8: DEFED Door/Window Sensor -->
+                <div class="product-item product-card p-6" data-category="security" data-price="225000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_kitchen.jpg" alt="ثلاجة ذكية" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_sensor2.jpg" alt="DEFED Door/Window Sensor" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">ثلاجة ذكية</h3>
-                    <p class="text-gray-400 mb-3">ثلاجة ذكية بشاشة لمس وإدارة الطعام المتطورة</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">DEFED Door/Window Sensor</h3>
+                    <p class="text-gray-400 mb-3">مستشعر باب/نافذة للكشف عن حالة الفتح/الإغلاق. إنذار مقاوم للعبث. اتصال لاسلكي 800 متر. بطارية 10 سنوات مع مستشعر حرارة مدمج</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
-                            <span>★★★★★</span>
+                            <span>★★★★☆</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.8)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.4)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">4,050,000 د.ع</span>
-                        <span class="text-sm text-yellow-400">محدود</span>
+                        <span class="text-2xl font-bold text-yellow-400">225,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
                         <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
@@ -439,21 +442,21 @@
                     </div>
                 </div>
 
-                <!-- Product 9 -->
-                <div class="product-item product-card p-6" data-category="entertainment" data-price="990000">
+                <!-- Product 9: Indoor Camera -->
+                <div class="product-item product-card p-6" data-category="security" data-price="630000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_speaker2.jpg" alt="نظام صوت ذكي" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_doorbell.jpg" alt="Indoor Camera" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">نظام صوت ذكي</h3>
-                    <p class="text-gray-400 mb-3">نظام صوت محيطي ذكي مع تقنية Dolby Atmos</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Indoor Camera</h3>
+                    <p class="text-gray-400 mb-3">كاميرا داخلية بدقة 400W. تقنية لون كامل في الإضاءة المنخفضة. تغطية رؤية واسعة مع مراقبة الزوايا الميتة. تتبع المشاة وإنذار المتسللين. وضع الخصوصية</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★★</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.9)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.7)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">990,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">630,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -462,22 +465,21 @@
                     </div>
                 </div>
 
-                <!-- Product 10 -->
-                <div class="product-item product-card p-6" data-category="lighting" data-price="585000">
+                <!-- Product 10: Human Presence Sensor -->
+                <div class="product-item product-card p-6" data-category="security" data-price="540000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_lighting2.jpg" alt="مصابيح ذكية" class="w-full h-48 object-cover rounded-lg">
-                        <div class="absolute top-2 left-2 bg-purple-500 text-white px-2 py-1 rounded text-xs">جديد</div>
+                        <img src="resources/smart_sensor2.jpg" alt="Human Presence Sensor" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">مصابيح ذكية متطورة</h3>
-                    <p class="text-gray-400 mb-3">مجموعة مصابيح ذكية قابلة للتخصيص بالكامل</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Human Presence Sensor</h3>
+                    <p class="text-gray-400 mb-3">مستشعر وجود بشري يحلل سلوك الإنسان (حاضر/غائب). يجمع بيانات الإضاءة البيئية. يربط الإضاءة والستائر والتكييف للإعدادات الذكية</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★☆</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.5)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.6)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">585,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">540,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -486,21 +488,21 @@
                     </div>
                 </div>
 
-                <!-- Product 11 -->
-                <div class="product-item product-card p-6" data-category="security" data-price="720000">
+                <!-- Product 11: Water Leak Sensor -->
+                <div class="product-item product-card p-6" data-category="security" data-price="180000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_doorbell.jpg" alt="جرس باب ذكي" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_smoke.jpg" alt="Water Leak Sensor" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">جرس باب ذكي</h3>
-                    <p class="text-gray-400 mb-3">جرس باب ذكي بكاميرا HD ومكالمات فيديو</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Water Leak Sensor</h3>
+                    <p class="text-gray-400 mb-3">مستشعر تسرب مياه مع مراقبة في الوقت الفعلي. تصميم منفصل للتحقيق والإلكترونيات لمنع النقع. مظهر مضغوط وتركيب عشوائي</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★☆</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.6)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.5)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">720,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">180,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
@@ -509,26 +511,212 @@
                     </div>
                 </div>
 
-                <!-- Product 12 -->
-                <div class="product-item product-card p-6" data-category="entertainment" data-price="405000">
+                <!-- Product 12: Household Gas Detector -->
+                <div class="product-item product-card p-6" data-category="security" data-price="360000">
                     <div class="relative mb-4">
-                        <img src="resources/smart_speaker3.jpg" alt="سماعة ذكية محمولة" class="w-full h-48 object-cover rounded-lg">
+                        <img src="resources/smart_smoke.jpg" alt="Household Gas Detector" class="w-full h-48 object-cover rounded-lg">
                     </div>
-                    <h3 class="product-title font-display text-xl font-bold mb-2">سماعة ذكية محمولة</h3>
-                    <p class="text-gray-400 mb-3">سماعة ذكية محمولة مع Alexa مدمج</p>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Household Gas Detector (ZigBee)</h3>
+                    <p class="text-gray-400 mb-3">كاشف غاز منزلي بدقة كشف عالية للغازات القابلة للاشتعال. إنذار عالي الديسيبل. شهادة CCCF الوطنية. إمداد طاقة 220V</p>
                     <div class="flex items-center mb-3">
                         <div class="rating flex">
                             <span>★★★★☆</span>
                         </div>
-                        <span class="text-sm text-gray-400 mr-2">(4.4)</span>
+                        <span class="text-sm text-gray-400 mr-2">(4.6)</span>
                     </div>
                     <div class="flex justify-between items-center mb-4">
-                        <span class="text-2xl font-bold text-yellow-400">405,000 د.ع</span>
+                        <span class="text-2xl font-bold text-yellow-400">360,000 د.ع</span>
                         <span class="text-sm text-green-400">متوفر</span>
                     </div>
                     <div class="flex space-x-2">
                         <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
                         <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="12">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 13: Silent Track Curtain Motor -->
+                <div class="product-item product-card p-6" data-category="shading" data-price="810000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_lighting2.jpg" alt="Silent Track Curtain Motor" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Silent Track Curtain Motor</h3>
+                    <p class="text-gray-400 mb-3">محرك ستائر صامت باستخدام المغناطيسية الطافية. ملامح ألمنيوم من الدرجة الجوية، محامل ناعمة، وأحزمة Kevlar صامتة</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★★</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.8)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">810,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="13">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 14: DC Tubular Motor V2 -->
+                <div class="product-item product-card p-6" data-category="shading" data-price="675000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_lighting2.jpg" alt="DC Tubular Motor V2" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">DC Tubular Motor (V2)</h3>
+                    <p class="text-gray-400 mb-3">محرك أنبوبي DC محسّن (35mm) مع جهد عريض، عزم كبير، إدارة حرارة محسّنة. متوافق 100-240V مع ثلاث سرعات قابلة للتعديل</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★☆</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.7)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">675,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="14">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 15: In-wall Air Quality Detector -->
+                <div class="product-item product-card p-6" data-category="climate" data-price="720000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_thermostat.jpg" alt="In-wall Air Quality Detector" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">In-wall Air Quality Detector (ZigBee)</h3>
+                    <p class="text-gray-400 mb-3">كاشف جودة هواء مدمج في الجدار. يكشف ويعرض PM2.5، الحرارة، الرطوبة، الإضاءة، CO2، الفورمالديهايد، وTVOC. شاشة TFT مع مستشعر قرب جسم الإنسان</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★★</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.8)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">720,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="15">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 16: SONOS Era 100 -->
+                <div class="product-item product-card p-6" data-category="entertainment" data-price="1080000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_speaker1.jpg" alt="SONOS Era 100" class="w-full h-48 object-cover rounded-lg">
+                        <div class="product-badge badge-featured">مميز</div>
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">SONOS Era 100</h3>
+                    <p class="text-gray-400 mb-3">صوت يمكنك وضعه في أي مكان. تحكم سهل مع تطبيق Sonos و Apple AirPlay 2. معمارية صوتية جديدة واتصال يحول تجربة الاستماع في أي غرفة</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★★</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.9)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">1,080,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="16">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 17: SPOT Universal Remote Controller -->
+                <div class="product-item product-card p-6" data-category="entertainment" data-price="360000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_speaker2.jpg" alt="SPOT Universal Remote Controller" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">SPOT Universal Remote Controller (CoSS)</h3>
+                    <p class="text-gray-400 mb-3">جهاز تحكم عن بعد IR لتبسيط حياتك بالتفاعل مع جميع أنظمة LifeSmart الذكية. تصميم خارجي فريد. يدعم 16 مليون لون لإنشاء تأثيرات إضاءة متنوعة</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★☆</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.5)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">360,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="17">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 18: DEFED Smart Station PRO -->
+                <div class="product-item product-card p-6" data-category="gateway" data-price="1800000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_hub.jpg" alt="DEFED Smart Station PRO" class="w-full h-48 object-cover rounded-lg">
+                        <div class="product-badge badge-featured">مميز</div>
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">DEFED Smart Station PRO</h3>
+                    <p class="text-gray-400 mb-3">بوابة متعددة البروتوكولات ومركز حوسبة حافة قوي. يدعم 7 بروتوكولات لاسلكية: Matter، CoSS، Zigbee، Z-Wave، BLE، Wi-Fi، 4G/5G. يدعم حتى 800 جهاز فرعي</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★★</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.9)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">1,800,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="18">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 19: Central Air-conditioner Smart Gateway -->
+                <div class="product-item product-card p-6" data-category="climate" data-price="900000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_thermostat.jpg" alt="Central Air-conditioner Smart Gateway" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Central Air-conditioner Smart Gateway</h3>
+                    <p class="text-gray-400 mb-3">بوابة ذكية لمكيفات الهواء المركزية. يدعم 98% من مصنعي وموديلات مكيفات الهواء. يتحكم في وحدات داخلية متعددة ويمكّن التحكم الذكي المرتبط</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★☆</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.7)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">900,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="19">قارن</button>
+                    </div>
+                </div>
+
+                <!-- Product 20: Nature Switch -->
+                <div class="product-item product-card p-6" data-category="lighting" data-price="495000">
+                    <div class="relative mb-4">
+                        <img src="resources/smart_switch.jpg" alt="Nature Switch" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <h3 class="product-title font-display text-xl font-bold mb-2">Nature Switch</h3>
+                    <p class="text-gray-400 mb-3">مفتاح ذكي بزجاج مقسّى. 16 مليون لون لمؤشرات LED. أيقونات قابلة للتخصيص. استجابة لمس في أجزاء من الثانية. مرحل مغناطيسي 16A</p>
+                    <div class="flex items-center mb-3">
+                        <div class="rating flex">
+                            <span>★★★★☆</span>
+                        </div>
+                        <span class="text-sm text-gray-400 mr-2">(4.6)</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-2xl font-bold text-yellow-400">495,000 د.ع</span>
+                        <span class="text-sm text-green-400">متوفر</span>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 neumorphic px-4 py-2 text-yellow-400 text-sm">إضافة للسلة</button>
+                        <button class="compare-btn px-4 py-2 bg-gray-600 text-white text-sm rounded" data-product-id="20">قارن</button>
                     </div>
                 </div>
 

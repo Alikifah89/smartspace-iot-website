@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initParticles();
     initDarkMode();
     initChatbot();
+    initScrollIndicator();
 });
 
 // Hero Background Animation with p5.js
@@ -277,8 +278,8 @@ function initProductSearch() {
             const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
             const matchesPrice = selectedPrice === 'all' || 
                 (selectedPrice === 'low' && price < 225000) ||
-                (selectedPrice === 'medium' && price >= 225000 && price < 675000) ||
-                (selectedPrice === 'high' && price >= 675000);
+                (selectedPrice === 'medium' && price >= 225000 && price <= 675000) ||
+                (selectedPrice === 'high' && price > 675000);
             
             if (matchesSearch && matchesCategory && matchesPrice) {
                 product.style.display = 'block';
@@ -416,6 +417,34 @@ if (window.location.pathname.includes('products.html')) {
 if (window.location.pathname.includes('designer.html')) {
     document.addEventListener('DOMContentLoaded', () => {
         initRoomDesigner();
+    });
+}
+
+// Scroll Indicator
+function initScrollIndicator() {
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (!scrollIndicator) return;
+    
+    // Hide indicator when user scrolls
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 100) {
+            scrollIndicator.style.opacity = '0';
+            scrollIndicator.style.pointerEvents = 'none';
+        } else {
+            scrollIndicator.style.opacity = '1';
+            scrollIndicator.style.pointerEvents = 'auto';
+        }
+        lastScrollTop = scrollTop;
+    });
+    
+    // Smooth scroll on click
+    scrollIndicator.addEventListener('click', () => {
+        const featuresSection = document.querySelector('section:nth-of-type(2)');
+        if (featuresSection) {
+            featuresSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     });
 }
 
