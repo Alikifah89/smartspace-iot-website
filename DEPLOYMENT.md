@@ -15,7 +15,7 @@
 ### الخيار 1: GitHub Pages (مجاني - موصى به)
 
 #### الخطوة 1: إنشاء مستودع GitHub
-w
+
 1. اذهب إلى [GitHub](https://github.com/new)
 2. أنشئ مستودع جديد باسم `smartspace-iot-website`
 3. اختر **Public**
